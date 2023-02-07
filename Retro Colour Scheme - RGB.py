@@ -10,6 +10,9 @@ grouped together when they fall between an upper limit and lower limit for their
 and a preset upper and lower limit for their Hue. These grouped pixels are used to
 create a mask (sub-image) in the new, desired colour. The masks are then combined
 to produce a new image made of the defined colours.
+
+For generally good results, set the sliders to the following values:
+242, 218, 185, 152, 116, 85, 48
 '''
 
 def nothing(x):

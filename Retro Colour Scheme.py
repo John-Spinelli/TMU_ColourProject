@@ -8,6 +8,9 @@ Pixels are evaluated based on their darkness (Value using the HSV representation
 are grouped together. Groupings are made by greating a mask of pixels whose darkness
 fits between a defined upper and lower limit. Each group is converted to one of the predefined
 colours, and displayed as a final image.
+
+For generally good results, set the sliders to the following values:
+242, 218, 185, 152, 116, 85, 48
 '''
 
 def nothing(x):
@@ -25,11 +28,6 @@ print(width, height)
 
 LOW = 0
 HIGH = 255
-
-# TEMP
-cv.namedWindow("MASK")
-cv.namedWindow("MASK2")
-cv.namedWindow("MASK3")
 
 
 # Create the window for the thresholds of the pixel Values
@@ -212,9 +210,6 @@ while(1):
 
     ### Display the final result
     cv.imshow('FINAL', final_mask)
-    cv.imshow("MASK", red_mask)
-    cv.imshow("MASK2", blue_mask)
-    cv.imshow("MASK3", cv.addWeighted(red_mask, 1, blue_mask, 1, 0))
     
     k = cv.waitKey(1)  & 0xFF
     if k == 27:
